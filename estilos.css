@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eef;
+    margin: 0;
+    padding: 20px;
+}
+
+.topbar {
+    background-color: #003366;
+    color: white;
+    padding: 8px 10px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: center;
+}
+
+.topbar-content span {
+    margin: 0 10px;
+}
+
+
+/* Escala el tamaño del título en móviles */
+h1, h2 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 5vw; /* CAMBIO: Escalable en móviles */
+}
+
+.controls, .menu, .section, .recordings {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Botones adaptables */
+button {
+    margin: 6px;
+    padding: 10px 15px; /* CAMBIO: Menos ancho para que quepa */
+    font-size: 4vw;      /* CAMBIO: Escalable en móviles */
+    max-width: 90%;      /* CAMBIO: No se desborde en pantallas pequeñas */
+    word-break: break-word; /* CAMBIO: Si el texto es muy largo se corta bien */
+}
+
+/* Audio centrado y escalable */
+audio {
+    width: 90%;             /* CAMBIO: Ajustable a pantalla */
+    max-width: 400px;
+    display: block;
+    margin: 20px auto;
+}
+
+.section {
+    display: none;
+}
+
+/* Rango escalable */
+input[type=range] {
+    width: 80%;             /* CAMBIO: Para que funcione en móviles */
+    max-width: 300px;
+}
+
+/*Logo de la universidad */
+
+.logo-izquierda {
+    position: absolute;
+    top: 60px;
+    left: 10px;
+}
+
+.logo-izquierda img {
+    width: 20vw;
+    height: auto;
+}
+
+
+/* Estilos para pantallas más grandes */
+@media (min-width: 768px) {
+    h1, h2 {
+        font-size: 2em;     /* CAMBIO: tamaño fijo en pantallas grandes */
+    }
+
+    button {
+        font-size: 16px;    /* Volver a tamaño normal en escritorio */
+        max-width: none;
+    }
+
+    input[type=range] {
+        width: 300px;
+    }
+}

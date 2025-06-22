@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Terapéutico - Completo</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <div class="topbar">
+    <div class="topbar-content">
+        <span>📧 Rampa Multisensorial</span>
+        <span>📍 Cuenca, Ecuador</span>
+        <span>🎓 Carrera de Ingeniería Biomédica</span>
+    </div>
+</div>
+
+<h1>Control de Audios para Terapia</h1>
+
+
+    <div class="logo-izquierda">
+    <img src="logo-ups.png" alt="Logo UPS">
+</div>
+
+
+
+    <div class="controls">
+        <h2>🌌 Reproductor de fondo relajante</h2>
+        <button onclick="playBackgroundAudio('Sonidos Relajantes/white-noise-358382 (1).mp3')">▶ Ruido Blanco</button>
+        <button onclick="playBackgroundAudio('Sonidos Relajantes/ambient-pads-loop-296968.mp3')">▶ Pads Ambientales</button>
+        <button onclick="playBackgroundAudio('Sonidos Relajantes/space-music-ambient-22325.mp3')">▶ Música Espacial</button>
+        <button onclick="stopBackgroundAudio()">⏹ Detener Ambiente</button>
+        <audio id="backgroundAudioPlayer" loop></audio>
+    </div>
+
+    <div class="menu">
+        <h2>🎵 Selecciona una Categoría</h2>
+        <button onclick="showSection('cotidianos')">Sonidos Cotidianos</button>
+        <button onclick="showSection('relajantes')">Sonidos Relajantes</button>
+        <button onclick="showSection('ambientales_amables')">Ambientales Amables</button>
+        <button onclick="showSection('ambientales_estresantes')">Ambientales Estresantes</button>
+    </div>
+
+    <div id="cotidianos" class="section">
+        <h2>🔊 Sonidos Cotidianos</h2>
+        <button onclick="playAudio('Sonidos Cotidianos/barking-large-and-small-dog-290711.mp3')">barking-large-and-small-dog-290711</button>
+        <button onclick="playAudio('Sonidos Cotidianos/big-dog-barking-300504.mp3')">Perro Ladrando</button>
+        <button onclick="playAudio('Sonidos Cotidianos/blender-37366.mp3')">blender-37366</button>
+        <button onclick="playAudio('Sonidos Cotidianos/breaking-glass-83809.mp3')">breaking-glass-83809</button>
+        <button onclick="playAudio('Sonidos Cotidianos/cellphone-ringing-6475.mp3')">cellphone-ringing-6475</button>
+        <button onclick="playAudio('Sonidos Cotidianos/doorbell-247139.mp3')">doorbell-247139</button>
+        <button onclick="playAudio('Sonidos Cotidianos/door-closing-353875.mp3')">door-closing-353875</button>
+        <button onclick="playAudio('Sonidos Cotidianos/main-door-opening-closing-38280.mp3')">main-door-opening-closing-38280</button>
+        <button onclick="playAudio('Sonidos Cotidianos/microwave-ding-104123.mp3')">microwave-ding-104123</button>
+        <button onclick="playAudio('Sonidos Cotidianos/sink-faucet-running-73556.mp3')">sink-faucet-running-73556</button>
+        <button onclick="playAudio('Sonidos Cotidianos/traffic-32180.mp3')">traffic-32180</button>
+        <button onclick="playAudio('Sonidos Cotidianos/vintage-doorbell-ring-sound-effect-325247.mp3')">vintage-doorbell-ring-sound-effect-325247</button>
+        <button onclick="hideSections()">🔙 Volver</button>
+    </div>
+
+    <div id="relajantes" class="section">
+        <h2>🌙 Sonidos Relajantes</h2>
+        <button onclick="playAudio('Sonidos Relajantes/ambient-glitched-synth-97674.mp3')">ambient-glitched-synth-97674</button>
+        <button onclick="playAudio('Sonidos Relajantes/ambient-pads-loop-296968.mp3')">ambient-pads-loop-296968</button>
+        <button onclick="playAudio('Sonidos Relajantes/space-music-ambient-22325.mp3')">space-music-ambient-22325</button>
+        <button onclick="playAudio('Sonidos Relajantes/white-noise-358382 (1).mp3')">white-noise-358382</button>
+        <button onclick="hideSections()">🔙 Volver</button>
+    </div>
+
+    <div id="ambientales_amables" class="section">
+        <h2>🌿 Sonidos Ambientales Amables</h2>
+        <button onclick="playAudio('Sonido Ambiental Amable/birds-chirping-75156.mp3')">birds-chirping-75156</button>
+        <button onclick="playAudio('Sonido Ambiental Amable/calming-rain-257596.mp3')">calming-rain-257596</button>
+        <button onclick="playAudio('Sonido Ambiental Amable/singing-crickets-at-the-night-230342.mp3')">singing-crickets-at-the-night-230342</button>
+        <button onclick="playAudio('Sonido Ambiental Amable/waterfall-in-distance-27967.mp3')">waterfall-in-distance-27967</button>
+        <button onclick="playAudio('Sonido Ambiental Amable/winter-wind-305577.mp3')">winter-wind-305577</button>
+        <button onclick="hideSections()">🔙 Volver</button>
+    </div>
+
+    <div id="ambientales_estresantes" class="section">
+        <h2>🔥 Sonidos Ambientales Estresantes</h2>
+        <button onclick="playAudio('Sonido Ambiente Estresante/rain-and-thunder-sfx-12820.mp3')">rain-and-thunder-sfx-12820</button>
+        <button onclick="playAudio('Sonido Ambiente Estresante/rooster-cock-a-doodle-doo-106702.mp3')">rooster-cock-a-doodle-doo-106702</button>
+        <button onclick="playAudio('Sonido Ambiente Estresante/thunderstorm-136832.mp3')">thunderstorm-136832</button>
+        <button onclick="hideSections()">🔙 Volver</button>
+    </div>
+
+    <audio id="audioPlayer" controls></audio>
+
+    <div class="recordings">
+        <h2>🎧 Grabaciones</h2>
+        <button onclick="toggleLoop()" id="loopToggle">🔁 Repetir: Desactivado</button>
+        <ul id="recordingsList"></ul>
+    </div>
+
+    <div class="controls">
+        <h2>🎚️ Controles Globales</h2>
+        <label>Volumen:</label><br>
+        <input type="range" min="0" max="1" step="0.01" value="1" onchange="setVolume(this.value)"><br><br>
+        <button onclick="changePlaybackRate(0.5)">0.5x</button>
+        <button onclick="changePlaybackRate(1)">1x</button>
+        <button onclick="changePlaybackRate(2)">2x</button><br><br>
+        <button onclick="startRecording()">🎙️ Grabar</button>
+        <button onclick="stopRecording()">🛑 Detener</button>
+    </div>
+
+    
+
+    <script src="funciones.js"></script>
+</body>
+</html>
