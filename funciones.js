@@ -66,3 +66,18 @@ function stopRecording() {
         mediaRecorder.stop();
     }
 }
+
+// Abrir y cerrar el menú lateral
+document.getElementById("sidebarToggle").onclick = function () {
+    const sidebar = document.getElementById("sidebar");
+    if (sidebar.style.right === "0px") {
+        sidebar.style.right = "-250px";
+    } else {
+        sidebar.style.right = "0px";
+    }
+};
+
+function closeSidebar() {
+    document.getElementById("sidebar").style.right = "-250px";
+}
+

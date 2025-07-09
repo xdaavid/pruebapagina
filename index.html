@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rampa Multisensorial IPCA</title>
+    <title>Audio Terapéutico - Completo</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
@@ -45,33 +45,33 @@
 
     <div id="cotidianos" class="section">
         <h2>🔊 Sonidos Cotidianos</h2>
-        <button onclick="playAudio('Sonidos Cotidianos/barking-large-and-small-dog-290711.mp3')">barking-large-and-small-dog-290711</button>
+        <button onclick="playAudio('Sonidos Cotidianos/barking-large-and-small-dog-290711.mp3')">Perros Ladrando</button>
         <button onclick="playAudio('Sonidos Cotidianos/big-dog-barking-300504.mp3')">Perro Ladrando</button>
-        <button onclick="playAudio('Sonidos Cotidianos/blender-37366.mp3')">blender-37366</button>
-        <button onclick="playAudio('Sonidos Cotidianos/breaking-glass-83809.mp3')">breaking-glass-83809</button>
-        <button onclick="playAudio('Sonidos Cotidianos/cellphone-ringing-6475.mp3')">cellphone-ringing-6475</button>
-        <button onclick="playAudio('Sonidos Cotidianos/doorbell-247139.mp3')">doorbell-247139</button>
-        <button onclick="playAudio('Sonidos Cotidianos/door-closing-353875.mp3')">door-closing-353875</button>
-        <button onclick="playAudio('Sonidos Cotidianos/main-door-opening-closing-38280.mp3')">main-door-opening-closing-38280</button>
-        <button onclick="playAudio('Sonidos Cotidianos/microwave-ding-104123.mp3')">microwave-ding-104123</button>
+        <button onclick="playAudio('Sonidos Cotidianos/blender-37366.mp3')">Licuadora</button>
+        <button onclick="playAudio('Sonidos Cotidianos/breaking-glass-83809.mp3')">Cristal roto</button>
+        <button onclick="playAudio('Sonidos Cotidianos/cellphone-ringing-6475.mp3')">Sonido de celular</button>
+        <button onclick="playAudio('Sonidos Cotidianos/doorbell-247139.mp3')">Timbre</button>
+        <button onclick="playAudio('Sonidos Cotidianos/door-closing-353875.mp3')">Puerta Cerrandose</button>
+        <button onclick="playAudio('Sonidos Cotidianos/main-door-opening-closing-38280.mp3')">Puerta Principal Abriendose y Cerrandose</button>
+        <button onclick="playAudio('Sonidos Cotidianos/microwave-ding-104123.mp3')">Microondas</button>
         <button onclick="playAudio('Sonidos Cotidianos/sink-faucet-running-73556.mp3')">sink-faucet-running-73556</button>
-        <button onclick="playAudio('Sonidos Cotidianos/traffic-32180.mp3')">traffic-32180</button>
-        <button onclick="playAudio('Sonidos Cotidianos/vintage-doorbell-ring-sound-effect-325247.mp3')">vintage-doorbell-ring-sound-effect-325247</button>
+        <button onclick="playAudio('Sonidos Cotidianos/traffic-32180.mp3')">Trafico</button>
+        <button onclick="playAudio('Sonidos Cotidianos/vintage-doorbell-ring-sound-effect-325247.mp3')">Timbre amable</button>
         <button onclick="hideSections()">🔙 Volver</button>
     </div>
 
     <div id="relajantes" class="section">
         <h2>🌙 Sonidos Relajantes</h2>
-        <button onclick="playAudio('Sonidos Relajantes/ambient-glitched-synth-97674.mp3')">ambient-glitched-synth-97674</button>
+        <button onclick="playAudio('Sonidos Relajantes/ambient-glitched-synth-97674.mp3')">Sinfonia ambiente</button>
         <button onclick="playAudio('Sonidos Relajantes/ambient-pads-loop-296968.mp3')">ambient-pads-loop-296968</button>
-        <button onclick="playAudio('Sonidos Relajantes/space-music-ambient-22325.mp3')">space-music-ambient-22325</button>
-        <button onclick="playAudio('Sonidos Relajantes/white-noise-358382 (1).mp3')">white-noise-358382</button>
+        <button onclick="playAudio('Sonidos Relajantes/space-music-ambient-22325.mp3')">Musica espacial ambiente</button>
+        <button onclick="playAudio('Sonidos Relajantes/white-noise-358382 (1).mp3')">Sonido Blanco</button>
         <button onclick="hideSections()">🔙 Volver</button>
     </div>
 
     <div id="ambientales_amables" class="section">
         <h2>🌿 Sonidos Ambientales Amables</h2>
-        <button onclick="playAudio('Sonido Ambiental Amable/birds-chirping-75156.mp3')">birds-chirping-75156</button>
+        <button onclick="playAudio('Sonido Ambiental Amable/birds-chirping-75156.mp3')">Pá</button>
         <button onclick="playAudio('Sonido Ambiental Amable/calming-rain-257596.mp3')">calming-rain-257596</button>
         <button onclick="playAudio('Sonido Ambiental Amable/singing-crickets-at-the-night-230342.mp3')">singing-crickets-at-the-night-230342</button>
         <button onclick="playAudio('Sonido Ambiental Amable/waterfall-in-distance-27967.mp3')">waterfall-in-distance-27967</button>
@@ -105,6 +105,18 @@
         <button onclick="startRecording()">🎙️ Grabar</button>
         <button onclick="stopRecording()">🛑 Detener</button>
     </div>
+
+    <!-- Botón flotante de menú -->
+<button id="sidebarToggle">☰ Menú</button>
+
+<!-- Menú lateral derecho -->
+<div id="sidebar">
+    <a href="https://www.youtube.com">Rampa Sensorial</a>
+    <a href="control-leds.html">Control de LEDs</a>
+    <a href="#tests">Módulo de Pruebas</a>
+    <a href="#" onclick="closeSidebar()">✖ Cerrar</a>
+</div>
+
 
     
 

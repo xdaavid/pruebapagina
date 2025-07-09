@@ -72,8 +72,52 @@ input[type=range] {
 
 .logo-izquierda img {
     width: 20vw;
-    height: auto;
+    height: 4vw;
 }
+
+/* Botón flotante en la parte derecha */
+#sidebarToggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1002;
+    background-color: #0055a5;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Sidebar lateral derecho oculto por defecto */
+#sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    right: -250px; /* Oculto fuera de pantalla */
+    background-color: #003366;
+    color: white;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    z-index: 1001;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+}
+
+#sidebar a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+#sidebar a:hover {
+    background-color: #0055a5;
+}
+
 
 
 /* Estilos para pantallas más grandes */

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de LEDs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #003366;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            margin: 10px;
+            background-color: #0055a5;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0077cc;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #0055a5;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>💡 Control de LEDs</h1>
+
+    <p>Presiona los botones para encender o apagar el LED.</p>
+
+    <button onclick="encenderLED()">Encender</button>
+    <button onclick="apagarLED()">Apagar</button>
+
+    <br><br>
+    <a href="index.html">⬅️ Volver al menú principal</a>
+
+    <script>
+        function encenderLED() {
+            alert("Simulando: LED ENCENDIDO");
+            // Aquí enviarías una petición al ESP32, por ejemplo con fetch:
+            fetch('http://192.168.1.33/led/on')
+        }
+
+        function apagarLED() {
+            alert("Simulando: LED APAGADO");
+            fetch('http://192.168.1.33/led/off')
+        }
+    </script>
+
+</body>
+</html>
