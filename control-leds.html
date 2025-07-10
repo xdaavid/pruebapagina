@@ -51,25 +51,17 @@
     <br><br>
     <a href="index.html">⬅️ Volver al menú principal</a>
 
-   <script>
-    function encenderLED() {
-  window.open("http://192.168.1.33/led/on", "_blank");
-    }
+<iframe id="comandoLED" style="display:none;"></iframe>
 
-
-    function apagarLED() {
-        fetch('http://192.168.1.33/led/off')
-            .then(response => response.text())
-            .then(data => {
-                console.log(data);
-                alert("✅ " + data);
-            })
-            .catch(error => {
-                console.error("Error al apagar:", error);
-                alert("❌ Error al apagar el LED");
-            });
-    }
+<script>
+function encenderLED() {
+  document.getElementById('comandoLED').src = 'http://192.168.1.33/led/on';
+}
+function apagarLED() {
+  document.getElementById('comandoLED').src = 'http://192.168.1.33/led/off';
+}
 </script>
+
 
 
 </body>
