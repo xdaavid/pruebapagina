@@ -51,17 +51,19 @@
     <br><br>
     <a href="index.html">⬅️ Volver al menú principal</a>
 
-<iframe id="ledControl" style="display: none;"></iframe>
 
 <script>
 function encenderLED() {
-  document.getElementById("ledControl").src = "http://192.168.1.33/led/on";
+  const win = window.open("http://192.168.1.33/led/on", "_blank", "width=1,height=1");
+  setTimeout(() => win.close(), 500); // Cierra la ventana tras 500ms
 }
 
 function apagarLED() {
-  document.getElementById("ledControl").src = "http://192.168.1.33/led/off";
+  const win = window.open("http://192.168.1.33/led/off", "_blank", "width=1,height=1");
+  setTimeout(() => win.close(), 500);
 }
 </script>
+
 
 </body>
 </html>
