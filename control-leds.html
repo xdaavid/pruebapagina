@@ -51,18 +51,34 @@
     <br><br>
     <a href="index.html">⬅️ Volver al menú principal</a>
 
-    <script>
-        function encenderLED() {
-            alert("Simulando: LED ENCENDIDO");
-            // Aquí enviarías una petición al ESP32, por ejemplo con fetch:
-            fetch('http://192.168.1.33/led/on')
-        }
+   <script>
+    function encenderLED() {
+        fetch('http://192.168.1.33/led/on')
+            .then(response => response.text())
+            .then(data => {
+                console.log(data);
+                alert("✅ " + data);
+            })
+            .catch(error => {
+                console.error("Error al encender:", error);
+                alert("❌ Error al encender el LED");
+            });
+    }
 
-        function apagarLED() {
-            alert("Simulando: LED APAGADO");
-            fetch('http://192.168.1.33/led/off')
-        }
-    </script>
+    function apagarLED() {
+        fetch('http://192.168.1.33/led/off')
+            .then(response => response.text())
+            .then(data => {
+                console.log(data);
+                alert("✅ " + data);
+            })
+            .catch(error => {
+                console.error("Error al apagar:", error);
+                alert("❌ Error al apagar el LED");
+            });
+    }
+</script>
+
 
 </body>
 </html>
