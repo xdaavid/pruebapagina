@@ -53,17 +53,9 @@
 
    <script>
     function encenderLED() {
-        fetch('http://192.168.1.33/led/on')
-            .then(response => response.text())
-            .then(data => {
-                console.log(data);
-                alert("✅ " + data);
-            })
-            .catch(error => {
-                console.error("Error al encender:", error);
-                alert("❌ Error al encender el LED");
-            });
+  window.open("http://192.168.1.33/led/on", "_blank");
     }
+
 
     function apagarLED() {
         fetch('http://192.168.1.33/led/off')
