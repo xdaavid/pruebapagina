@@ -51,18 +51,17 @@
     <br><br>
     <a href="index.html">⬅️ Volver al menú principal</a>
 
-<iframe id="comandoLED" style="display:none;"></iframe>
+    <img id="ledPing" style="display:none;" />
 
-<script>
-function encenderLED() {
-  document.getElementById('comandoLED').src = 'http://192.168.1.33/led/on';
-}
-function apagarLED() {
-  document.getElementById('comandoLED').src = 'http://192.168.1.33/led/off';
-}
-</script>
+    <script>
+    function encenderLED() {
+        document.getElementById("ledPing").src = "http://192.168.1.33/led/on";
+    }
 
-
+    function apagarLED() {
+        document.getElementById("ledPing").src = "http://192.168.1.33/led/off";
+    }
+    </script>
 
 </body>
 </html>
