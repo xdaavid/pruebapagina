@@ -1,69 +1,117 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Control de LEDs</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #eef;
-            padding: 20px;
-            text-align: center;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Control de Tira LED</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef;
+      text-align: center;
+      padding: 20px;
+    }
 
-        h1 {
-            color: #003366;
-        }
+    h1 {
+      color: #003366;
+    }
 
-        button {
-            padding: 12px 24px;
-            font-size: 18px;
-            margin: 10px;
-            background-color: #0055a5;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-        }
+    button, input[type="range"] {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
 
-        button:hover {
-            background-color: #0077cc;
-        }
+    button {
+      background-color: #0055a5;
+      color: white;
+    }
 
-        a {
-            display: inline-block;
-            margin-top: 20px;
-            text-decoration: none;
-            color: #0055a5;
-        }
-    </style>
+    button:hover {
+      background-color: #0077cc;
+    }
+
+    input[type="color"] {
+      width: 60px;
+      height: 40px;
+      border: none;
+      margin-top: 10px;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #0055a5;
+    }
+  </style>
 </head>
 <body>
 
-    <h1>💡 Control de LEDs</h1>
+  <h1>🌈 Control de Tira LED</h1>
 
-    <p>Presiona los botones para encender o apagar el LED.</p>
+  <p>Selecciona un color:</p>
+  <input type="color" id="colorPicker" onchange="enviarColor()" />
 
-    <button onclick="encenderLED()">Encender</button>
-    <button onclick="apagarLED()">Apagar</button>
+  <p>Brillo:</p>
+  <input type="range" min="0" max="255" value="128" onchange="ajustarBrillo(this.value)"/>
 
-    <br><br>
-    <a href="index.html">⬅️ Volver al menú principal</a>
+    <div>
+    <button onclick="encenderLED()">🔆 Encender</button>
+    <button onclick="apagarLED()">🌑 Apagar</button>
+    <button id="modoBtn" onclick="cambiarModo()">🤖 Modo: Manual</button>
+    </div>
 
 
-<script>
-function encenderLED() {
-  const win = window.open("http://192.168.1.33/led/on", "_blank", "width=1,height=1");
-  setTimeout(() => win.close(), 500); // Cierra la ventana tras 500ms
-}
+  <div>
+    <button onclick="efecto('rainbow')">🌈 Arcoíris</button>
+    <button onclick="efecto('flash')">⚡ Flash</button>
+    <button onclick="efecto('wave')">🌊 Ola</button>
+  </div>
 
-function apagarLED() {
-  const win = window.open("http://192.168.1.33/led/off", "_blank", "width=1,height=1");
-  setTimeout(() => win.close(), 500);
-}
-</script>
+  <br><br>
+  <a href="index.html">⬅️ Volver al menú principal</a>
 
+    <script>
+    const baseURL = "http://192.168.1.33";
+    let modoSensor = false;
+
+    function encenderLED() {
+        abrirVentana(`${baseURL}/led/on`);
+    }
+
+    function apagarLED() {
+        abrirVentana(`${baseURL}/led/off`);
+    }
+
+    function enviarColor() {
+        const color = document.getElementById("colorPicker").value.substring(1); // sin #
+        abrirVentana(`${baseURL}/led/color?hex=${color}`);
+    }
+
+    function ajustarBrillo(valor) {
+        abrirVentana(`${baseURL}/led/brightness?val=${valor}`);
+    }
+
+    function efecto(nombre) {
+        abrirVentana(`${baseURL}/led/efecto?tipo=${nombre}`);
+    }
+
+    function cambiarModo() {
+        modoSensor = !modoSensor;
+        const modo = modoSensor ? "sensor" : "manual";
+        document.getElementById("modoBtn").textContent = modoSensor ? "🧠 Modo: Sensor" : "🤖 Modo: Manual";
+        abrirVentana(`${baseURL}/mode/${modo}`);
+    }
+
+    function abrirVentana(url) {
+        const win = window.open(url, "_blank", "width=1,height=1");
+        setTimeout(() => win.close(), 500);
+    }
+    </script>
 
 </body>
 </html>
