@@ -76,7 +76,7 @@
   <a href="index.html">⬅️ Volver al menú principal</a>
 
     <script>
-    const baseURL = "http://192.168.1.33";
+    const baseURL = "http://172.20.10.9";
     let modoSensor = false;
 
     function encenderLED() {
@@ -109,7 +109,7 @@
 
     function abrirVentana(url) {
         const win = window.open(url, "_blank", "width=1,height=1");
-        setTimeout(() => win.close(), 1500);
+        setTimeout(() => win.close(), 500);
     }
     </script>
 
